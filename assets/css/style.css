@@ -1,8 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* ==========
+  Global Section
+========== */
+
+:root{
+  --white-coffee: #EAE0D6;
+  --khaki: #C6AD8F;
+  --ebony-clay: #5D503F;
+  --umber: #22333B;
+  --wood: #8B590F;
+
+  --love: #ff0000;
+  --leaf: #428745;
+}
+
+*{
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+*,
+*::after,
+*::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ==========
+  Container Section
+========== */
+
+.wrapper{
+  display: grid;
+  height: calc(100vh + 100px);
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 1fr 8fr;
+}
+
+.container{
+  margin: 15px;
+  padding: 15px;
+}
+
+#card-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(400px, 1fr));
+  grid-gap: 20px;
+}
+
+/* ==========
+  Navigation Section
+========== */
+nav{
+  background-color: var(--umber);
+  grid-area: 1 / 2 / 2 / 3;
+
+  max-height: 100px;
+  display: grid;
+  justify-items: flex-end;
+  align-items: center;
+}
+
+#sign-up{
+  padding: 10px 30px;
+  border: 2px solid var(--white-coffee);
+  border-radius: 5px;
+  outline: none;
+  background-color: transparent;
+
+  color: var(--white-coffee);
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+#sign-in{
+  margin-left: 10px;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  background-color: var(--white-coffee);
+
+  color: var(--umber);
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+
+
+/* ==========
+  Aside Section
+========== */
+aside{
+  background-color: var(--umber);
+  grid-area: 1 / 1 / 3 / 2;
+  min-width: 300px;
+}
+
+aside .container{
+  height: calc(100vh);
+  display: grid;
+  grid-template-rows: 1fr 4fr 4fr;
+}
+
+aside .container .logo{
+  margin: 0.625rem 0 5rem 0;
+  font-size: 1.50rem;
+  color: var(--white-coffee);
+}
+
+aside .container ul{
+  font-size: clamp(.2rem, 1rem + 0.3661vw, 1.2rem);
+  list-style: none;
+  color: var(--white-coffee);
+  display: grid;
+  row-gap: 20px;
+  grid-template-rows: repeat(4, 1fr);
+
+  align-items: center;
+}
+
+aside .container ul li{
+  display: grid;
+  grid-template-columns: 1fr 6fr;
+}
+
+/* ==========
+  Main Section
+========== */
+
+main{
+  grid-area: 2 / 2 / 3 / 3;
+  background-color: var(--khaki);
+  overflow-y: auto;
+}
+
 .card{
-  width: 100px;
-  height: 100px;
-  background-color: gray;
-  border-radius: 20px;
-  padding: 10px;
-  margin: 1rem;
+  width: 300px;
+  height: 400px;
+  background-color: var(--white-coffee);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ------
+Text Container 
+*/
+
+.text-container{
+  width: 250px;
+  height: 350px;
+  display: grid;
+  align-items: center;
+  grid-template-rows: repeat(5, 1fr);
+  row-gap: 20px;
+}
+
+.book-title{
+  font-size: 1.50rem;
+  font-weight: 600;
+  color: #8E611D;
+}
+
+.book-author span,
+.book-author,
+.book-pages,
+.book-status {
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.book-author span{
+  color: var(--wood);
+}
+
+.book-author {
+  color: var(--umber);
+}
+
+.book-pages{
+  color: var(--wood);
+}
+
+.book-status{
+  color: var(--leaf);
+}
+
+/*------
+Feature Container 
+*/
+
+.features{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
+  align-items: center;
+}
+
+.fa-hearts,
+.fa-circle,
+.fa-trash{
+  font-size: 1.50rem;
+  cursor: pointer;
+}
+
+.fa-hearts{
+  color: var(--love);
+  grid-column: 3 / 4;
+}
+
+.fa-circle{
+  color: var(--leaf);
+  font-weight: 700;
+  grid-column: 4 / 5;
+}
+
+.fa-trash{
+  color: var(--umber);
+  grid-column: 5 / 6;
 }
