@@ -245,20 +245,80 @@ Feature Container
 
 
 .pop-bg{
+  display: block;
   position: absolute;
   background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
   height: calc(100vh + 100px);
   opacity: 1;
+  transition: all 0.3s ease;
 }
 
 .form-container{
   position: absolute;
-  background-color: white;
+  background-color: var(--white-coffee);
   border-radius: 10px;
   width: calc(500px + 25px);
-  height: calc(400px + 25px);
+  height: calc(600px + 25px);
 
   inset: 0 0 0 0;
   margin: auto;
+
+  display: grid;
+  grid-template-columns: 2fr;
+  justify-content: center;
+  align-items: center;
 }
+
+.input-container{
+  display: grid;
+  grid-template-columns: 2fr;
+  grid-template-rows: repeat(5, 1fr);
+  row-gap: 20px;
+}
+
+#title-container,
+#author-container,
+#pages-container,
+#status-container{
+  display: grid;
+  grid-template-rows: repeat(2,1fr);
+}
+
+#title-container label,
+#author-container label,
+#pages-container label,
+#status-container label{
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+
+#title,
+#author,
+#pages,
+#status{
+  padding: 10px;
+  outline: none;
+  border: 2px solid var(--umber);
+  border-radius: 5px;
+  background-color: var(--khaki);
+}
+
+.input-container button{
+  
+  border-radius: 10px;
+  font-size: 1.50rem;
+  font-weight: 600;
+  color: white;
+  border: 5px solid  rgb(146, 48, 63);
+  background-color: rgb(219, 72, 94);
+  
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.input-container button:hover{
+  border: 5px solid rgb(202, 134, 193);
+  background-color: rgb(213, 106, 122);
+}
+
