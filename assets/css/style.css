@@ -56,8 +56,6 @@
 nav{
   background-color: var(--umber);
   grid-area: 1 / 2 / 2 / 3;
-
-  max-height: 100px;
   display: grid;
   justify-items: flex-end;
   align-items: center;
@@ -147,6 +145,7 @@ main{
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 10px 10px 16px 2px rgba(0, 0, 0, 0.1);
 }
 
 /* ------
@@ -160,6 +159,20 @@ Text Container
   align-items: center;
   grid-template-rows: repeat(5, 1fr);
   row-gap: 20px;
+}
+
+.create-card{
+  border: 5px solid var(--ebony-clay);
+  cursor: pointer;
+}
+
+.fa-plus{
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  font-size: 10rem;
+  font-weight: 100;
+  color: var(--ebony-clay);
 }
 
 .book-title{
@@ -224,4 +237,28 @@ Feature Container
 .fa-trash{
   color: var(--umber);
   grid-column: 5 / 6;
+}
+
+/* ==========
+  Form Section
+========== */
+
+
+.pop-bg{
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: calc(100vh + 100px);
+  opacity: 1;
+}
+
+.form-container{
+  position: absolute;
+  background-color: white;
+  border-radius: 10px;
+  width: calc(500px + 25px);
+  height: calc(400px + 25px);
+
+  inset: 0 0 0 0;
+  margin: auto;
 }
