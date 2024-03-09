@@ -17,8 +17,26 @@
   <div class="wrapper">
     <div class="pop-bg">
       <div class="form-container">
-        <form action="#">
-          
+        <form>
+          <div class="container input-container">
+            <div id="title-container">
+              <label for="title">Book Title</label>
+              <input type="text" name="title" id="title" required>
+            </div>
+            <div id="author-container">
+              <label for="author">Book Author</label>
+              <input type="text" name="author" id="author" required>
+            </div>
+            <div id="pages-container">
+              <label for="pages">Number of Page</label>
+              <input type="number" name="pages" id="pages" required>
+            </div>
+            <div id="status-container">
+              <label for="status">Reading Status</label>
+              <input type="number" name="status" id="status" required>
+            </div>
+            <button type="submit" onclick="addBookToLibrary()">Add To Read</button>
+          </div>
         </form>
       </div>
     </div>
@@ -46,7 +64,7 @@
 
         <div id="card-container">
 
-          <div class="card create-card">
+          <div class="card create-card" onclick="getUserInput()">
             <i class="fa-solid fa-plus"></i>
           </div>
 
