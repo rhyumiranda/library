@@ -1,12 +1,76 @@
 const myLibrary = [];
+const formInput = document.querySelector('.pop-bg');
+const form = document.getElementById('form')
+const title = document.getElementById('title');
+const author = document.getElementById('author');
+const pages = document.getElementById('pages');
+const stat = document.getElementById('status');
 
-function Book(title, author, pages, status) {
-  this.name = title;
+function Book(title, author, pages, read) {
+  this.title = title;
   this.author = author;
   this.pages = pages;
-  this.status = status;
+  this.read = read;
 }
 
+function addBookToLibrary(book) {
+  myLibrary.push(book);
+  displayBooks();
+}
+
+function displayBooks(){
+  const cardContainer = document.getElementById('card-container');
+
+  myLibrary.forEach((book, index) => {
+    const card = document.createElement('div');
+    card.classList.add('card');
+
+    card.innerHTML = `
+      <div class="text-container">
+      <div class="book-title">
+        ${book.title}
+      </div>
+      <div class="book-author"><span>Book by</span><br> ${book.author}</div>
+      <div class="book-pages">${book.pages} Pages</div>
+      <div class="book-status">${book.read}</div>
+      <div class="features">
+        <i class="fa-regular fa-heart fa-hearts"></i>
+        <i class="fa-regular fa-circle"></i>
+        <i class="fa-solid fa-trash"></i>
+      </div>
+    `
+    cardContainer.append(card);
+  });
+}
+
+function showForm(){
+  formInput.style.display = "block";
+}
+
+function removeBook(index){
+  myLibrary.splice(index, 1);
+  displayBooks();
+}
+
+function checkLibrary(){
+  console.log(myLibrary);
+}
+
+document.getElementById('form').addEventListener('submit', (event) => {
+  event.preventDefault();
+  const titleVal = title.value;
+  const authorVal = author.value;
+  const pagesVal = pages.value;
+  const statVal = stat.value;
+
+  let book = new Book(titleVal, authorVal, pagesVal, statVal);
+  addBookToLibrary(book);
+  formInput.style.display = "none";
+  form.reset();
+});
+
+
+/*
 function createBook(){
   const cardContainer = document.getElementById('card-container');
   const card = document.createElement('div');
@@ -54,8 +118,7 @@ function createBook(){
   card.appendChild(textContainer)
   cardContainer.appendChild(card);
 }
-
-
+*/
 
 
 
