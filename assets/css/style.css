@@ -109,6 +109,9 @@ aside .container .logo{
   margin: 0.625rem 0 5rem 0;
   font-size: 1.50rem;
   color: var(--white-coffee);
+  display: grid;
+  grid-template-columns: 1fr 7fr;
+
 }
 
 aside .container ul{
@@ -135,6 +138,8 @@ main{
   grid-area: 2 / 2 / 3 / 3;
   background-color: var(--khaki);
   overflow-y: auto;
+
+  display: grid;
 }
 
 .card{
@@ -163,6 +168,7 @@ Text Container
 
 .create-card{
   border: 5px solid var(--ebony-clay);
+  background-color: #35312e4c;
   cursor: pointer;
 }
 
@@ -245,7 +251,7 @@ Feature Container
 
 
 .pop-bg{
-  display: block;
+  display: none;
   position: absolute;
   background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
@@ -276,7 +282,6 @@ Feature Container
   grid-template-rows: repeat(5, 1fr);
   row-gap: 20px;
 }
-
 #title-container,
 #author-container,
 #pages-container,
@@ -318,7 +323,7 @@ Feature Container
 }
 
 .input-container button:hover{
-  border: 5px solid rgb(202, 134, 193);
+  border: 5px solid rgb(213, 106, 122);
   background-color: rgb(213, 106, 122);
 }
 
