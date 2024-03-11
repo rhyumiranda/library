@@ -1,27 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 /* ==========
   Global Section
 ========== */
 
-:root{
-  --white-coffee: #EAE0D6;
-  --khaki: #C6AD8F;
-  --ebony-clay: #5D503F;
-  --umber: #22333B;
-  --wood: #8B590F;
+:root {
+  --white-coffee: #eae0d6;
+  --khaki: #c6ad8f;
+  --ebony-clay: #5d503f;
+  --umber: #22333b;
+  --wood: #8b590f;
 
   --love: #ff0000;
   --leaf: #428745;
 }
 
-*{
-  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+* {
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
 }
 
 *,
 *::after,
-*::before{
+*::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -31,19 +33,19 @@
   Container Section
 ========== */
 
-.wrapper{
+.wrapper {
   display: grid;
   height: calc(100vh + 100px);
   grid-template-columns: 1fr 4fr;
   grid-template-rows: 1fr 8fr;
 }
 
-.container{
+.container {
   margin: 15px;
   padding: 15px;
 }
 
-#card-container{
+#card-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-template-rows: repeat(auto-fill, minmax(400px, 1fr));
@@ -53,7 +55,7 @@
 /* ==========
   Navigation Section
 ========== */
-nav{
+nav {
   background-color: var(--umber);
   grid-area: 1 / 2 / 2 / 3;
   display: grid;
@@ -61,7 +63,7 @@ nav{
   align-items: center;
 }
 
-#sign-up{
+#sign-up {
   padding: 10px 30px;
   border: 2px solid var(--white-coffee);
   border-radius: 5px;
@@ -74,7 +76,7 @@ nav{
   cursor: pointer;
 }
 
-#sign-in{
+#sign-in {
   margin-left: 10px;
   padding: 10px 30px;
   border: none;
@@ -88,34 +90,31 @@ nav{
   cursor: pointer;
 }
 
-
-
 /* ==========
   Aside Section
 ========== */
-aside{
+aside {
   background-color: var(--umber);
   grid-area: 1 / 1 / 3 / 2;
   min-width: 300px;
 }
 
-aside .container{
+aside .container {
   height: calc(100vh);
   display: grid;
   grid-template-rows: 1fr 4fr 4fr;
 }
 
-aside .container .logo{
+aside .container .logo {
   margin: 0.625rem 0 5rem 0;
-  font-size: 1.50rem;
+  font-size: 1.5rem;
   color: var(--white-coffee);
   display: grid;
   grid-template-columns: 1fr 7fr;
-
 }
 
-aside .container ul{
-  font-size: clamp(.2rem, 1rem + 0.3661vw, 1.2rem);
+aside .container ul {
+  font-size: clamp(0.2rem, 1rem + 0.3661vw, 1.2rem);
   list-style: none;
   color: var(--white-coffee);
   display: grid;
@@ -125,7 +124,7 @@ aside .container ul{
   align-items: center;
 }
 
-aside .container ul li{
+aside .container ul li {
   display: grid;
   grid-template-columns: 1fr 6fr;
 }
@@ -134,7 +133,7 @@ aside .container ul li{
   Main Section
 ========== */
 
-main{
+main {
   grid-area: 2 / 2 / 3 / 3;
   background-color: var(--khaki);
   overflow-y: auto;
@@ -142,7 +141,7 @@ main{
   display: grid;
 }
 
-.card{
+.card {
   width: 300px;
   height: 400px;
   background-color: var(--white-coffee);
@@ -157,7 +156,7 @@ main{
 Text Container 
 */
 
-.text-container{
+.text-container {
   width: 250px;
   height: 350px;
   display: grid;
@@ -166,13 +165,13 @@ Text Container
   row-gap: 20px;
 }
 
-.create-card{
+.create-card {
   border: 5px solid var(--ebony-clay);
   background-color: #35312e4c;
   cursor: pointer;
 }
 
-.fa-plus{
+.fa-plus {
   display: grid;
   align-content: center;
   justify-content: center;
@@ -181,10 +180,10 @@ Text Container
   color: var(--ebony-clay);
 }
 
-.book-title{
-  font-size: 1.50rem;
+.book-title {
+  font-size: 1.5rem;
   font-weight: 600;
-  color: #8E611D;
+  color: #8e611d;
 }
 
 .book-author span,
@@ -195,7 +194,7 @@ Text Container
   font-weight: 500;
 }
 
-.book-author span{
+.book-author span {
   color: var(--wood);
 }
 
@@ -203,11 +202,11 @@ Text Container
   color: var(--umber);
 }
 
-.book-pages{
+.book-pages {
   color: var(--wood);
 }
 
-.book-status{
+.book-status {
   color: var(--leaf);
 }
 
@@ -215,7 +214,7 @@ Text Container
 Feature Container 
 */
 
-.features{
+.features {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   justify-items: center;
@@ -224,34 +223,34 @@ Feature Container
 
 .fa-hearts,
 .fa-circle,
-.fa-trash{
-  font-size: 1.50rem;
+.fa-trash {
+  font-size: 1.5rem;
   cursor: pointer;
 }
 
-.fa-hearts{
+.fa-hearts {
   color: var(--love);
   grid-column: 3 / 4;
 }
 
-.fa-circle{
+.fa-circle {
   font-weight: 700;
   grid-column: 4 / 5;
 }
 
-.read{
+.read {
   color: var(--leaf);
 }
 
-.going{
+.going {
   color: #c18e31;
 }
 
-.not-started{
+.not-started {
   color: var(--love);
 }
 
-.fa-trash{
+.fa-trash {
   color: var(--umber);
   grid-column: 5 / 6;
 }
@@ -260,8 +259,7 @@ Feature Container
   Form Section
 ========== */
 
-
-.pop-bg{
+.pop-bg {
   display: none;
   position: absolute;
   background-color: rgba(0, 0, 0, 0.5);
@@ -271,7 +269,7 @@ Feature Container
   transition: all 0.3s ease;
 }
 
-.form-container{
+.form-container {
   position: absolute;
   background-color: var(--white-coffee);
   border-radius: 10px;
@@ -287,34 +285,34 @@ Feature Container
   align-items: center;
 }
 
-.input-container{
+.input-container {
   display: grid;
   grid-template-columns: 2fr;
   grid-template-rows: repeat(5, 1fr);
   row-gap: 20px;
 }
 
-.input-container label{
+.input-container label {
   display: grid;
   align-items: center;
 }
 
-#radio-container input{
+#radio-container input {
   cursor: pointer;
 }
 
 #title-container,
 #author-container,
 #pages-container,
-#status-container{
+#status-container {
   display: grid;
-  grid-template-rows: repeat(2,1fr);
+  grid-template-rows: repeat(2, 1fr);
 }
 
 #title-container label,
 #author-container label,
 #pages-container label,
-#status-container label{
+#status-container label {
   font-weight: 600;
   font-size: 1.125rem;
 }
@@ -322,7 +320,7 @@ Feature Container
 #title,
 #author,
 #pages,
-#status{
+#status {
   padding: 10px;
   outline: none;
   border: 2px solid var(--umber);
@@ -330,21 +328,19 @@ Feature Container
   background-color: var(--khaki);
 }
 
-.input-container button{
-  
+.input-container button {
   border-radius: 10px;
-  font-size: 1.50rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: white;
-  border: 5px solid  rgb(146, 48, 63);
+  border: 5px solid rgb(146, 48, 63);
   background-color: rgb(219, 72, 94);
-  
+
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.input-container button:hover{
+.input-container button:hover {
   border: 5px solid rgb(213, 106, 122);
   background-color: rgb(213, 106, 122);
 }
-

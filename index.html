@@ -1,75 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ElysianLib</title>
-  
-  <link rel="stylesheet" href="./assets/css/normalize.css">
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <script src="./assets/script/script.js" defer></script>
-  <script
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ElysianLib</title>
+
+    <link rel="stylesheet" href="./assets/css/normalize.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script src="./assets/script/script.js" defer></script>
+    <script
       src="https://kit.fontawesome.com/e4a1219774.js"
       crossorigin="anonymous"
-  ></script>
-</head>
-<body>
-  <div class="wrapper">
-    <div class="pop-bg">
-      <div class="form-container">
-        <form id="form" clas>
-          <div class="container input-container">
-            <div id="title-container">
-              <label for="title">Book Title</label>
-              <input type="text" name="title" id="title" required>
-            </div>
-            <div id="author-container">
-              <label for="author">Book Author</label>
-              <input type="text" name="author" id="author" required>
-            </div>
-            <div id="pages-container">
-              <label for="pages">Number of Page</label>
-              <input type="number" name="pages" id="pages" required>
-            </div>
-            <div id="status-container">
-              <label>Reading Status</label>
-              <div id="radio-container">
-                <input type="radio" name="is-read" value="Read" required> Read
-                <input type="radio" name="is-read" value="In Progress" required> In Progress
-                <input type="radio" name="is-read" value="Not Started" required> Not Started
+    ></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="pop-bg">
+        <div class="form-container">
+          <form id="form" clas>
+            <div class="container input-container">
+              <div id="title-container">
+                <label for="title">Book Title</label>
+                <input type="text" name="title" id="title" required />
               </div>
+              <div id="author-container">
+                <label for="author">Book Author</label>
+                <input type="text" name="author" id="author" required />
+              </div>
+              <div id="pages-container">
+                <label for="pages">Number of Page</label>
+                <input type="number" name="pages" id="pages" required />
+              </div>
+              <div id="status-container">
+                <label>Reading Status</label>
+                <div id="radio-container">
+                  <input type="radio" name="is-read" value="Read" required />
+                  Read
+                  <input
+                    type="radio"
+                    name="is-read"
+                    value="In Progress"
+                    required
+                  />
+                  In Progress
+                  <input
+                    type="radio"
+                    name="is-read"
+                    value="Not Started"
+                    required
+                  />
+                  Not Started
+                </div>
+              </div>
+              <button type="submit">Add To Read</button>
             </div>
-            <button type="submit">Add To Read</button>
-          </div>
-        </form>
-      </div>
-    </div>
-    <nav>
-      <div class="container">
-        <button id="sign-up">Sign Up</button>
-        <button id="sign-in">Sign In</button>
-      </div>
-    </nav>
-    <aside> 
-      <div class="container">
-        <div class="logo"><i class="fa-solid fa-book"></i> ElysianLib</div>
-        <ul id="count-display">
-          <li><i class="fa-solid fa-heart" id="heart"></i> Favorited - 0</li>
-          <li><i class="fa-solid fa-flag"></i> Books Read - 0</li>
-          <li><i class="fa-solid fa-hourglass-start"></i> In Progress - 0</li>
-          <li><i class="fa-solid fa-flag-checkered"></i> Not Started - 0</li>
-        </ul>
-      </div>
-    </aside>
-    <main>
-      <div class="container">
-        <div id="card-container">
-          <div class="card create-card" onclick="showForm()">
-            <i class="fa-solid fa-plus"></i>
-          </div>
+          </form>
         </div>
       </div>
-    </main>
-  </div>
-</body>
+      <nav>
+        <div class="container">
+          <button id="sign-up">Sign Up</button>
+          <button id="sign-in">Sign In</button>
+        </div>
+      </nav>
+      <aside>
+        <div class="container">
+          <div class="logo"><i class="fa-solid fa-book"></i> ElysianLib</div>
+          <ul id="count-display">
+            <li><i class="fa-solid fa-heart" id="heart"></i> Favorited - 0</li>
+            <li><i class="fa-solid fa-flag"></i> Books Read - 0</li>
+            <li><i class="fa-solid fa-hourglass-start"></i> In Progress - 0</li>
+            <li><i class="fa-solid fa-flag-checkered"></i> Not Started - 0</li>
+          </ul>
+        </div>
+      </aside>
+      <main>
+        <div class="container">
+          <div id="card-container">
+            <div class="card create-card" onclick="showForm()">
+              <i class="fa-solid fa-plus"></i>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
 </html>

@@ -10,11 +10,11 @@ function Book(title, author, pages, read) {
 function addBookToLibrary(book) {
   myLibrary.push(book);
   displayBooks();
-  updateDisplayCount()
+  updateDisplayCount();
 }
 
-function displayBooks(){
-  const cardContainer = document.getElementById('card-container');
+function displayBooks() {
+  const cardContainer = document.getElementById("card-container");
   cardContainer.innerHTML = `
     <div class="card create-card" onclick="showForm()">
       <i class="fa-solid fa-plus"></i>
@@ -22,9 +22,9 @@ function displayBooks(){
   `;
 
   myLibrary.forEach((book, index) => {
-    if(book.isFavorite){
-      const card = document.createElement('div');
-      card.classList.add('card');
+    if (book.isFavorite) {
+      const card = document.createElement("div");
+      card.classList.add("card");
       card.innerHTML = `
         <div class="text-container">
         <div class="book-title">
@@ -41,9 +41,9 @@ function displayBooks(){
       `;
       cardContainer.append(card);
       updateStatusDisplay(index);
-    } else{
-      const card = document.createElement('div');
-      card.classList.add('card');
+    } else {
+      const card = document.createElement("div");
+      card.classList.add("card");
       card.innerHTML = `
         <div class="text-container">
         <div class="book-title">
@@ -64,25 +64,25 @@ function displayBooks(){
   });
 }
 
-function addToFavorites(index){
-  if(myLibrary[index].isFavorite === undefined){
+function addToFavorites(index) {
+  if (myLibrary[index].isFavorite === undefined) {
     myLibrary[index].isFavorite = true;
-  } else if(myLibrary[index].isFavorite === true){
+  } else if (myLibrary[index].isFavorite === true) {
     myLibrary[index].isFavorite = false;
-  } else if(myLibrary[index].isFavorite === false){
+  } else if (myLibrary[index].isFavorite === false) {
     myLibrary[index].isFavorite = true;
   }
 
   displayBooks();
-  updateDisplayCount()
+  updateDisplayCount();
 }
 
-function changeStatus(index){
-  if(myLibrary[index].read === "Read"){
+function changeStatus(index) {
+  if (myLibrary[index].read === "Read") {
     myLibrary[index].read = "Not Started";
-  } else if(myLibrary[index].read === "Not Started"){
+  } else if (myLibrary[index].read === "Not Started") {
     myLibrary[index].read = "In Progress";
-  } else{
+  } else {
     myLibrary[index].read = "Read";
   }
 
@@ -90,45 +90,45 @@ function changeStatus(index){
   updateStatusDisplay(index);
 }
 
-function updateStatusDisplay(index){
+function updateStatusDisplay(index) {
   let circleStatusClr = document.getElementById(`status-${index}`);
   let readingStatusTxtClr = document.getElementById(`reading-status-${index}`);
 
-  if(myLibrary[index].read === "Read"){
-    readingStatusTxtClr.style.color = '#428745';
-    circleStatusClr.style.color = '#428745';
-    circleStatusClr.style.fontWeight = '700';
-  } else if(myLibrary[index].read === "Not Started"){
-    readingStatusTxtClr.style.color = '#ff0000';
-    circleStatusClr.style.color = '#ff0000';
-    circleStatusClr.style.fontWeight = '700';
-  } else{
-    readingStatusTxtClr.style.color = '#c18e31';
-    circleStatusClr.style.color = '#c18e31';
-    circleStatusClr.style.fontWeight = '700';
+  if (myLibrary[index].read === "Read") {
+    readingStatusTxtClr.style.color = "#428745";
+    circleStatusClr.style.color = "#428745";
+    circleStatusClr.style.fontWeight = "700";
+  } else if (myLibrary[index].read === "Not Started") {
+    readingStatusTxtClr.style.color = "#ff0000";
+    circleStatusClr.style.color = "#ff0000";
+    circleStatusClr.style.fontWeight = "700";
+  } else {
+    readingStatusTxtClr.style.color = "#c18e31";
+    circleStatusClr.style.color = "#c18e31";
+    circleStatusClr.style.fontWeight = "700";
   }
 
-  updateDisplayCount()
+  updateDisplayCount();
 }
 
-function updateDisplayCount(){
-  let isFavoriteFiltered = myLibrary.filter(item => {
+function updateDisplayCount() {
+  let isFavoriteFiltered = myLibrary.filter((item) => {
     return item.isFavorite == true;
   }).length;
 
-  let haveRead = myLibrary.filter(item => {
+  let haveRead = myLibrary.filter((item) => {
     return item.read == "Read";
   }).length;
 
-  let isReading = myLibrary.filter(item => {
+  let isReading = myLibrary.filter((item) => {
     return item.read == "In Progress";
   }).length;
 
-  let willRead = myLibrary.filter(item => {
+  let willRead = myLibrary.filter((item) => {
     return item.read == "Not Started";
   }).length;
 
-  const parentDisplay = document.getElementById('count-display').children;
+  const parentDisplay = document.getElementById("count-display").children;
   parentDisplay.item(0).innerHTML = `
     <i class="fa-solid fa-heart" id="heart"></i> Favorited - ${isFavoriteFiltered}
   `;
@@ -143,25 +143,27 @@ function updateDisplayCount(){
   `;
 }
 
-function removeBook(index){
+function removeBook(index) {
   myLibrary.splice(index, 1);
   displayBooks();
-  updateDisplayCount()
+  updateDisplayCount();
 }
 
-function showForm(){
-  document.querySelector('.pop-bg').style.display = "block";
+function showForm() {
+  document.querySelector(".pop-bg").style.display = "block";
 }
 
-document.getElementById('form').addEventListener('submit', (event) => {
+document.getElementById("form").addEventListener("submit", (event) => {
   event.preventDefault();
-  const titleVal = document.getElementById('title').value;
-  const authorVal = document.getElementById('author').value;
-  const pagesVal = document.getElementById('pages').value;
-  const isReadVal = document.querySelector('input[name="is-read"]:checked').value;
+  const titleVal = document.getElementById("title").value;
+  const authorVal = document.getElementById("author").value;
+  const pagesVal = document.getElementById("pages").value;
+  const isReadVal = document.querySelector(
+    'input[name="is-read"]:checked'
+  ).value;
 
   let book = new Book(titleVal, authorVal, pagesVal, isReadVal);
   addBookToLibrary(book);
-  document.querySelector('.pop-bg').style.display = "none";
-  document.getElementById('form').reset();
+  document.querySelector(".pop-bg").style.display = "none";
+  document.getElementById("form").reset();
 });
