@@ -291,7 +291,7 @@ Feature Container
 ========== */
 
 .pop-bg {
-  display: block;
+  display: none;
   position: absolute;
   background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
