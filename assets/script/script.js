@@ -13,16 +13,24 @@ function addBookToLibrary(book) {
   updateDisplayCount();
 }
 
+/*
+displayBooks() serves as the source of printing of cards whenever it is called.
+Before it place a series of items, it first clear the container first to remove
+the previous items that was update. This is to make sure no duplication happens
+and all printed books are accurate.
+*/
 function displayBooks() {
   const cardContainer = document.getElementById("card-container");
   cardContainer.innerHTML = `
     <div class="card create-card" onclick="showForm()">
       <i class="fa-solid fa-plus"></i>
     </div>
-  `;
+  `; //This clears the container I addded create-card so that the create button would still be intact even deleted.
+  
 
+  //This foreach iterates and checks all the items of our library. We have used the items and the contructor to write clean and efficiently.
   myLibrary.forEach((book, index) => {
-    if (book.isFavorite) {
+    if (book.isFavorite) { //This is to add fill color for the favorite button
       const card = document.createElement("div");
       card.classList.add("card");
       card.innerHTML = `
@@ -39,8 +47,8 @@ function displayBooks() {
           <i class="fa-solid fa-trash" onclick="removeBook(${index})"></i>
         </div>
       `;
-      cardContainer.append(card);
-      updateStatusDisplay(index);
+      cardContainer.append(card); 
+      updateStatusDisplay(index); //This is called to change the color of the reading status circle and text.
     } else {
       const card = document.createElement("div");
       card.classList.add("card");
@@ -64,6 +72,7 @@ function displayBooks() {
   });
 }
 
+//This is used to push new key.value on myLibrary if book is favorited by user.
 function addToFavorites(index) {
   if (myLibrary[index].isFavorite === undefined) {
     myLibrary[index].isFavorite = true;
@@ -77,6 +86,7 @@ function addToFavorites(index) {
   updateDisplayCount();
 }
 
+//This is to modify the values that has already been declared this is to ensure that myLibrary data is updated.
 function changeStatus(index) {
   if (myLibrary[index].read === "Read") {
     myLibrary[index].read = "Not Started";
@@ -90,6 +100,7 @@ function changeStatus(index) {
   updateStatusDisplay(index);
 }
 
+//This serves as the function to change the color of the circle and text of this.read constructor.
 function updateStatusDisplay(index) {
   let circleStatusClr = document.getElementById(`status-${index}`);
   let readingStatusTxtClr = document.getElementById(`reading-status-${index}`);
@@ -108,9 +119,10 @@ function updateStatusDisplay(index) {
     circleStatusClr.style.fontWeight = "700";
   }
 
-  updateDisplayCount();
+  updateDisplayCount(); //Called this function inside so that it would also be called whenever updateStatusDisplay is called.
 }
 
+//This is to modify the values and keep track of the items we have in the container.
 function updateDisplayCount() {
   let isFavoriteFiltered = myLibrary.filter((item) => {
     return item.isFavorite == true;
@@ -159,6 +171,8 @@ function updateDisplayCount() {
   `;
 }
 
+
+//This will accep an index and it will remove it from our array list and update our display.
 function removeBook(index) {
   myLibrary.splice(index, 1);
   displayBooks();
@@ -168,12 +182,13 @@ function removeBook(index) {
 function showForm() {
   document.querySelector(".pop-bg").style.display = "block";
 }
-
+//showForm and hideForm is used to reveal and hide our pop-up form whenever createButton is clicked.
 function hideForm() {
   document.querySelector(".pop-bg").style.display = "none";
   document.getElementById("form").reset();
 }
 
+//This is to prevent submission of data through method.
 document.getElementById("form").addEventListener("submit", (event) => {
   event.preventDefault();
   const titleVal = document.getElementById("title").value;
