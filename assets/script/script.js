@@ -199,7 +199,7 @@ document.getElementById("form").addEventListener("submit", (event) => {
   ).value;
 
   let book = new Book(titleVal, authorVal, pagesVal, isReadVal);
-  addBookToLibrary(book);
+  addBookToLibrary(book); //This would trigger for us to create cards and to create another data on array whenever we submit a data.
   document.querySelector(".pop-bg").style.display = "none";
   document.getElementById("form").reset();
 });
