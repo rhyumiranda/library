@@ -52,6 +52,15 @@
   grid-gap: 20px;
 }
 
+#sign-container{
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+#button-container{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
 /* ==========
   Navigation Section
 ========== */
@@ -61,6 +70,7 @@ nav {
   display: grid;
   justify-items: flex-end;
   align-items: center;
+  grid-template-columns: 1fr 4fr;
 }
 
 #sign-up {
@@ -100,7 +110,7 @@ aside {
 }
 
 aside .container {
-  height: calc(100vh);
+  height: calc(100vh + 25px);
   display: grid;
   grid-template-rows: 1fr 4fr 4fr;
 }
@@ -163,6 +173,7 @@ Text Container
   align-items: center;
   grid-template-rows: repeat(5, 1fr);
   row-gap: 20px;
+  overflow: hidden;
 }
 
 .create-card {
@@ -255,18 +266,48 @@ Feature Container
   grid-column: 5 / 6;
 }
 
+#menu{
+  display: none; 
+  margin: 15px;
+  padding: 15px;
+  font-size: 1.5rem;
+  color: var(--white-coffee);
+
+  align-items: center;
+}
+
+#side-menu{
+  display: none;
+}
+
+#close-menu{
+  margin: 2rem 0 4rem 0;
+  color: var(--white-coffee);
+  padding: 7px .325rem;
+}
+
 /* ==========
   Form Section
 ========== */
 
 .pop-bg {
-  display: none;
+  display: block;
   position: absolute;
   background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
   height: calc(100vh + 100px);
   opacity: 1;
   transition: all 0.3s ease;
+}
+
+#close-form{
+  margin: 0 15px;
+  padding: 0 15px;
+  position: relative;
+  left: 450px;
+  font-size: 1.25rem;
+  font-weight: 800;
+  cursor: pointer;
 }
 
 .form-container {
@@ -295,9 +336,17 @@ Feature Container
 .input-container label {
   display: grid;
   align-items: center;
+  cursor: pointer;
 }
 
-#radio-container input {
+#radio-container{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px
+}
+
+#radio-container input{
   cursor: pointer;
 }
 
@@ -343,4 +392,206 @@ Feature Container
 .input-container button:hover {
   border: 5px solid rgb(213, 106, 122);
   background-color: rgb(213, 106, 122);
+}
+
+/* @media screen and (min-width: 768px){
+
+} */
+
+@media screen and (max-width: 768px){
+  #menu{
+    display: block;
+    justify-content: center;
+  }
+
+  #side-menu{
+    display:  block;
+  }
+
+  #fixed-menu{
+    display: none;
+  }
+
+  aside{
+    min-width: 75px;
+  }
+
+  aside .container{
+    background-color: var(--umber);
+    position: absolute;
+    z-index: 999;
+
+    width: 50%;
+    height: calc(100vh + 100px);
+    top:0 ;
+    margin: 0px;
+  }
+
+  #sign-up{
+    font-size: 0.75rem;
+    max-width: 100px;
+    max-width: 120px;
+    padding: 5px 10px;
+  }
+
+  #sign-in{
+    padding: 5px 10px;
+    font-size: 0.75rem;
+    width: 100%;
+    max-width: 100px;
+  }
+
+  .text-container {
+    width: 150px;
+    height: 250px;
+    display: grid;
+    align-items: center;
+    grid-template-rows: repeat(5, 1fr);
+    row-gap: 20px;
+  }
+
+  #card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+  }
+
+  .card {
+    width: 200px;
+    height: 300px;
+    background-color: var(--white-coffee);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 10px 10px 16px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  .fa-plus{
+    font-size: 5rem;
+  }
+
+  .book-title {
+    font-size: .80rem;
+  }
+  
+  .book-author span,
+  .book-author,
+  .book-pages,
+  .book-status {
+    font-size: 0.625rem;
+    font-weight: 500;
+  }
+
+  .features {
+    column-gap: 20px;
+  }
+
+  .pop-bg {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: calc(100vh + 100px);
+  }
+  
+  #close-form{
+    margin: 0 15px;
+    padding: 0 15px;
+    position: relative;
+    left: 210px;
+    top: 20px;
+    font-size: 1.25rem;
+    font-weight: 800;
+    cursor: pointer;
+  }
+  
+  .form-container {
+    width: calc(250px + 25px);
+    height: calc(350px + 25px);
+  }
+
+  .input-container {
+    display: grid;
+    grid-template-columns: 2fr;
+    grid-template-rows: repeat(5, 1fr);
+    row-gap: 10px;
+  }
+  
+  .input-container label {
+    display: grid;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  #radio-container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    font-size: .60rem;
+  }
+  
+  #title-container,
+  #author-container,
+  #pages-container,
+  #status-container {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+  }
+  
+  #title-container label,
+  #author-container label,
+  #pages-container label,
+  #status-container label {
+    font-weight: 600;
+    font-size: .60rem;
+  }
+  
+  #title,
+  #author,
+  #pages,
+  #status {
+    padding: 5px;
+    outline: none;
+    border: 2px solid var(--umber);
+    font-size: .60rem;
+  }
+  
+  .input-container button {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+}
+
+@media screen and (max-width: 425px){
+  #sign-up{   
+    border: 2px solid var(--white-coffee);
+    font-size: 0.70rem;
+    width: 100%;
+    max-width: 100px;
+  }
+
+  #sign-in{
+    padding: 5px 10px;
+    font-size: 0.70rem;
+    width: 100%;
+    max-width: 110px;
+  }
+
+  #fixed-menu{
+    display: none;
+  }
+
+  aside .container{
+    background-color: var(--umber);
+    position: absolute;
+    z-index: 999;
+
+    width: 100%;
+    height: calc(100vh + 100px);
+    top:0 ;
+    margin: 0px;
+  }
 }
