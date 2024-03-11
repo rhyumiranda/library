@@ -405,7 +405,7 @@ Feature Container
   }
 
   #side-menu {
-    display: block;
+    display: none;
   }
 
   #fixed-menu {
