@@ -417,7 +417,6 @@ Feature Container
   }
 
   aside .container {
-    background-color: var(--umber);
     position: absolute;
     z-index: 999;
 
