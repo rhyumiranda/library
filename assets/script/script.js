@@ -129,6 +129,8 @@ function updateDisplayCount() {
   }).length;
 
   const parentDisplay = document.getElementById("count-display").children;
+  const parentDisplayCopy = document.getElementById("count-display-copy").children;
+
   parentDisplay.item(0).innerHTML = `
     <i class="fa-solid fa-heart" id="heart"></i> Favorited - ${isFavoriteFiltered}
   `;
@@ -141,6 +143,19 @@ function updateDisplayCount() {
   parentDisplay.item(3).innerHTML = `
     <i class="fa-solid fa-flag-checkered"></i> Not Started - ${willRead}
   `;
+
+  parentDisplayCopy.item(0).innerHTML = `
+    <i class="fa-solid fa-heart" id="heart"></i> Favorited - ${isFavoriteFiltered}
+  `;
+  parentDisplayCopy.item(1).innerHTML = `
+    <i class="fa-solid fa-flag"></i> Books Read - ${haveRead}
+  `;
+  parentDisplayCopy.item(2).innerHTML = `
+    <i class="fa-solid fa-hourglass-start"></i> In Progress - ${isReading}
+  `;
+  parentDisplayCopy.item(3).innerHTML = `
+    <i class="fa-solid fa-flag-checkered"></i> Not Started - ${willRead}
+  `;
 }
 
 function removeBook(index) {
@@ -151,6 +166,11 @@ function removeBook(index) {
 
 function showForm() {
   document.querySelector(".pop-bg").style.display = "block";
+}
+
+function hideForm() {
+  document.querySelector(".pop-bg").style.display = "none";
+  document.getElementById("form").reset();
 }
 
 document.getElementById("form").addEventListener("submit", (event) => {
@@ -167,3 +187,11 @@ document.getElementById("form").addEventListener("submit", (event) => {
   document.querySelector(".pop-bg").style.display = "none";
   document.getElementById("form").reset();
 });
+
+document.getElementById('menu').addEventListener('click', () => {
+  document.getElementById('side-menu').style.display = 'block';
+})
+
+document.getElementById('close-menu').addEventListener('click', () => {
+  document.getElementById('side-menu').style.display = 'none';
+})
