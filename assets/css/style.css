@@ -52,11 +52,11 @@
   grid-gap: 20px;
 }
 
-#sign-container{
+#sign-container {
   grid-area: 1 / 2 / 2 / 3;
 }
 
-#button-container{
+#button-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
@@ -266,8 +266,8 @@ Feature Container
   grid-column: 5 / 6;
 }
 
-#menu{
-  display: none; 
+#menu {
+  display: none;
   margin: 15px;
   padding: 15px;
   font-size: 1.5rem;
@@ -276,14 +276,14 @@ Feature Container
   align-items: center;
 }
 
-#side-menu{
+#side-menu {
   display: none;
 }
 
-#close-menu{
+#close-menu {
   margin: 2rem 0 4rem 0;
   color: var(--white-coffee);
-  padding: 7px .325rem;
+  padding: 7px 0.325rem;
 }
 
 /* ==========
@@ -300,7 +300,7 @@ Feature Container
   transition: all 0.3s ease;
 }
 
-#close-form{
+#close-form {
   margin: 0 15px;
   padding: 0 15px;
   position: relative;
@@ -339,14 +339,14 @@ Feature Container
   cursor: pointer;
 }
 
-#radio-container{
+#radio-container {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 20px
+  gap: 20px;
 }
 
-#radio-container input{
+#radio-container input {
   cursor: pointer;
 }
 
@@ -398,43 +398,43 @@ Feature Container
 
 } */
 
-@media screen and (max-width: 768px){
-  #menu{
+@media screen and (max-width: 768px) {
+  #menu {
     display: block;
     justify-content: center;
   }
 
-  #side-menu{
-    display:  block;
+  #side-menu {
+    display: block;
   }
 
-  #fixed-menu{
+  #fixed-menu {
     display: none;
   }
 
-  aside{
+  aside {
     min-width: 75px;
   }
 
-  aside .container{
+  aside .container {
     background-color: var(--umber);
     position: absolute;
     z-index: 999;
 
     width: 50%;
     height: calc(100vh + 100px);
-    top:0 ;
+    top: 0;
     margin: 0px;
   }
 
-  #sign-up{
+  #sign-up {
     font-size: 0.75rem;
     max-width: 100px;
     max-width: 120px;
     padding: 5px 10px;
   }
 
-  #sign-in{
+  #sign-in {
     padding: 5px 10px;
     font-size: 0.75rem;
     width: 100%;
@@ -460,22 +460,16 @@ Feature Container
   .card {
     width: 200px;
     height: 300px;
-    background-color: var(--white-coffee);
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 10px 10px 16px 2px rgba(0, 0, 0, 0.1);
   }
 
-  .fa-plus{
+  .fa-plus {
     font-size: 5rem;
   }
 
   .book-title {
-    font-size: .80rem;
+    font-size: 0.8rem;
   }
-  
+
   .book-author span,
   .book-author,
   .book-pages,
@@ -490,23 +484,19 @@ Feature Container
 
   .pop-bg {
     display: none;
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.5);
     width: 100%;
     height: calc(100vh + 100px);
   }
-  
-  #close-form{
+
+  #close-form {
     margin: 0 15px;
     padding: 0 15px;
-    position: relative;
     left: 210px;
     top: 20px;
     font-size: 1.25rem;
     font-weight: 800;
-    cursor: pointer;
   }
-  
+
   .form-container {
     width: calc(250px + 25px);
     height: calc(350px + 25px);
@@ -518,80 +508,61 @@ Feature Container
     grid-template-rows: repeat(5, 1fr);
     row-gap: 10px;
   }
-  
-  .input-container label {
-    display: grid;
-    align-items: center;
-    cursor: pointer;
-  }
-  
-  #radio-container{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+
+  #radio-container {
     gap: 10px;
-    font-size: .60rem;
+    font-size: 0.6rem;
   }
-  
-  #title-container,
-  #author-container,
-  #pages-container,
-  #status-container {
-    display: grid;
-    grid-template-rows: repeat(2, 1fr);
-  }
-  
+
   #title-container label,
   #author-container label,
   #pages-container label,
   #status-container label {
     font-weight: 600;
-    font-size: .60rem;
+    font-size: 0.6rem;
   }
-  
+
   #title,
   #author,
   #pages,
   #status {
     padding: 5px;
-    outline: none;
-    border: 2px solid var(--umber);
-    font-size: .60rem;
+    font-size: 0.6rem;
   }
-  
+
   .input-container button {
     font-size: 1rem;
     font-weight: 600;
   }
 }
 
-@media screen and (max-width: 425px){
-  #sign-up{   
+@media screen and (max-width: 425px) {
+  #sign-up {
     border: 2px solid var(--white-coffee);
-    font-size: 0.70rem;
+    font-size: 0.7rem;
     width: 100%;
     max-width: 100px;
   }
 
-  #sign-in{
+  #sign-in {
     padding: 5px 10px;
-    font-size: 0.70rem;
+    font-size: 0.7rem;
     width: 100%;
     max-width: 110px;
   }
 
-  #fixed-menu{
+  #fixed-menu {
     display: none;
   }
 
-  aside .container{
+  aside .container {
     background-color: var(--umber);
     position: absolute;
     z-index: 999;
 
     width: 100%;
     height: calc(100vh + 100px);
-    top:0 ;
+    top: 0;
     margin: 0px;
   }
 }

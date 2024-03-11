@@ -17,7 +17,8 @@
     <div class="wrapper">
       <div class="pop-bg">
         <div class="form-container">
-          <form id="form" clas>
+          <form id="form">
+            <i class="fa-solid fa-x" id="close-form" onclick="hideForm()"></i>
             <div class="container input-container">
               <div id="title-container">
                 <label for="title">Book Title</label>
@@ -58,15 +59,28 @@
         </div>
       </div>
       <nav>
-        <div class="container">
-          <button id="sign-up">Sign Up</button>
-          <button id="sign-in">Sign In</button>
+        <div class="container" id="sign-container">
+          <div id="button-container">
+            <button id="sign-up">Sign Up</button>
+            <button id="sign-in">Sign In</button>
+          </div>
         </div>
       </nav>
       <aside>
-        <div class="container">
+        <i class="fa-solid fa-bars" id="menu"></i>
+        <div class="container" id="fixed-menu">
           <div class="logo"><i class="fa-solid fa-book"></i> ElysianLib</div>
           <ul id="count-display">
+            <li><i class="fa-solid fa-heart" id="heart"></i> Favorited - 0</li>
+            <li><i class="fa-solid fa-flag"></i> Books Read - 0</li>
+            <li><i class="fa-solid fa-hourglass-start"></i> In Progress - 0</li>
+            <li><i class="fa-solid fa-flag-checkered"></i> Not Started - 0</li>
+          </ul>
+        </div>
+        <div class="container" id="side-menu">
+          <i class="fa-solid fa-x" id="close-menu" onclick="hideForm()"></i>
+          <div class="logo"><i class="fa-solid fa-book"></i> ElysianLib</div>
+          <ul id="count-display-copy">
             <li><i class="fa-solid fa-heart" id="heart"></i> Favorited - 0</li>
             <li><i class="fa-solid fa-flag"></i> Books Read - 0</li>
             <li><i class="fa-solid fa-hourglass-start"></i> In Progress - 0</li>

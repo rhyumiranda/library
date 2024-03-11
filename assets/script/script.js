@@ -129,7 +129,8 @@ function updateDisplayCount() {
   }).length;
 
   const parentDisplay = document.getElementById("count-display").children;
-  const parentDisplayCopy = document.getElementById("count-display-copy").children;
+  const parentDisplayCopy =
+    document.getElementById("count-display-copy").children;
 
   parentDisplay.item(0).innerHTML = `
     <i class="fa-solid fa-heart" id="heart"></i> Favorited - ${isFavoriteFiltered}
@@ -188,10 +189,10 @@ document.getElementById("form").addEventListener("submit", (event) => {
   document.getElementById("form").reset();
 });
 
-document.getElementById('menu').addEventListener('click', () => {
-  document.getElementById('side-menu').style.display = 'block';
-})
+document.getElementById("menu").addEventListener("click", () => {
+  document.getElementById("side-menu").style.display = "block";
+});
 
-document.getElementById('close-menu').addEventListener('click', () => {
-  document.getElementById('side-menu').style.display = 'none';
-})
+document.getElementById("close-menu").addEventListener("click", () => {
+  document.getElementById("side-menu").style.display = "none";
+});
