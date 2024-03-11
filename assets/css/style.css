@@ -236,7 +236,7 @@ Feature Container
 
 .fa-circle{
   color: var(--leaf);
-  font-weight: 700;
+  font-weight: 800;
   grid-column: 4 / 5;
 }
 
