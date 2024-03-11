@@ -282,6 +282,16 @@ Feature Container
   grid-template-rows: repeat(5, 1fr);
   row-gap: 20px;
 }
+
+.input-container label{
+  display: grid;
+  align-items: center;
+}
+
+#radio-container input{
+  cursor: pointer;
+}
+
 #title-container,
 #author-container,
 #pages-container,
