@@ -46,15 +46,14 @@
     </div>
     <nav>
       <div class="container">
-        <button id="sign-up" onclick="checkLibrary()">Sign Up</button>
+        <button id="sign-up">Sign Up</button>
         <button id="sign-in">Sign In</button>
       </div>
     </nav>
-
     <aside> 
       <div class="container">
         <div class="logo"><i class="fa-solid fa-book"></i> ElysianLib</div>
-        <ul>
+        <ul id="count-display">
           <li><i class="fa-solid fa-heart" id="heart"></i> Favorited - 0</li>
           <li><i class="fa-solid fa-flag"></i> Books Read - 0</li>
           <li><i class="fa-solid fa-hourglass-start"></i> In Progress - 0</li>
@@ -64,34 +63,13 @@
     </aside>
     <main>
       <div class="container">
-
         <div id="card-container">
-
           <div class="card create-card" onclick="showForm()">
             <i class="fa-solid fa-plus"></i>
           </div>
-
-          <!-- <div class="card">
-            <div class="text-container">
-              <div class="book-title">
-                Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones
-              </div>
-              <div class="book-author"><span>Book by</span><br> James Clear</div>
-              <div class="book-pages">381 Pages</div>
-              <div class="book-status">Read</div>
-              <div class="features">
-                <i class="fa-regular fa-heart fa-hearts"></i>
-                <i class="fa-regular fa-circle"></i>
-                <i class="fa-solid fa-trash"></i>
-              </div>
-            </div>
-          </div> -->
-          
         </div>
-
       </div>
     </main>
-    
   </div>
 </body>
 </html>
