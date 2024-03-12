@@ -404,7 +404,7 @@ Feature Container
     justify-content: center;
   }
 
-  #side-menu {
+  #side-menu{
     display: none;
   }
 
@@ -417,6 +417,7 @@ Feature Container
   }
 
   aside .container {
+    background-color: var(--umber);
     position: absolute;
     z-index: 999;
 
@@ -536,6 +537,15 @@ Feature Container
 }
 
 @media screen and (max-width: 425px) {
+
+  #side-menu{
+    display: none;
+  }
+
+  #fixed-menu {
+    display: none;
+  }
+
   #sign-up {
     border: 2px solid var(--white-coffee);
     font-size: 0.7rem;
